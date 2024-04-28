@@ -1,8 +1,7 @@
 'use client'
-import React, {SetStateAction, useEffect} from "react";
-import Image from "next/image";
+import React, {useEffect} from "react";
 import styles from "./page.module.scss";
-import { Product, useCartContext } from "@/src/data/contexts/cartContext";
+import { Product } from "@/src/data/contexts/cartContext";
 import { useState } from "react";
 import { Cart } from "@/src/components/Cart";
 import { ProductItem } from "@/src/components/Product";

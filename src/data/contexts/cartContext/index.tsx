@@ -3,7 +3,7 @@
 import { createContext, useContext, useState } from "react";
 
 
-export interface ICartContext { 
+export interface ICartContext {
   cartItems: Array<Product>;
   addCartItem: (product: Product) => void;
   incrementQtd: (product: Product) => void
@@ -39,7 +39,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
       setCartItems((prev) =>
         prev.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1, amount: (item.price * (item.quantity + 1))  }
+            ? { ...item, quantity: item.quantity + 1, amount: (item.price * (item.quantity + 1)) }
             : item
         )
       );
@@ -48,19 +48,19 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }
   };
 
-    const incrementQtd = (product: Product) => {
-      const updatedCartItems = cartItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1, amount: (item.price * (item.quantity + 1))} : item
-      );
-      setCartItems(updatedCartItems);      
-      
-    }
-    const decrementQtd = (product: Product) => {
-      const updatedCartItems = cartItems.map((item) =>
-        item.id === product.id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1, amount: (item.price * (item.quantity - 1)) } : item
-      );
-      setCartItems(updatedCartItems);
-    }
+  const incrementQtd = (product: Product) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === product.id ? { ...item, quantity: item.quantity + 1, amount: (item.price * (item.quantity + 1)) } : item
+    );
+    setCartItems(updatedCartItems);
+
+  }
+  const decrementQtd = (product: Product) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === product.id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1, amount: (item.price * (item.quantity - 1)) } : item
+    );
+    setCartItems(updatedCartItems);
+  }
 
   const removeCartItem = (product: Product) => {
     setCartItems((prev) => prev.filter((item) => item.id !== product.id));

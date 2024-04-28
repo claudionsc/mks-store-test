@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React from "react";
 import styles from './page.module.scss'
 import { IoIosCloseCircle } from "react-icons/io";
 import { Product, useCartContext } from "../../data/contexts/cartContext/index";
@@ -19,16 +19,14 @@ export const Cart = ({ onClose }: ICartProps) => {
         return items.reduce((total, item) => total + item.amount, 0);
     };
 
-    
-
     return (
         <AnimatePresence>
-            <motion.aside 
-               initial={{width: 0}} 
-               animate={{width: '35vw'}}
-               exit={{width: 0}}
-               
-            className={styles.aside}>
+            <motion.aside
+                initial={{ width: 0 }}
+                animate={{ width: '35vw' }}
+                exit={{ width: 0 }}
+
+                className={styles.aside}>
                 <div className={styles.top}>
                     <h1>Carrinho de compras</h1>
                     <div onClick={onClose}>
@@ -38,12 +36,11 @@ export const Cart = ({ onClose }: ICartProps) => {
                 <section>
                     {cartItems.map((item) => {
                         return (
-                            
-                            <motion.span 
-                            initial={{opacity: 0}}
-                            animate={{opacity: 100}}
-                            exit={{opacity: 0}}
-                            data-testid="cart-product" key={item.id} className={styles.product}>
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 100 }}
+                                exit={{ opacity: 0 }}
+                                data-testid="cart-product" key={item.id} className={styles.product}>
                                 <IoIosCloseCircle onClick={() => removeCartItem(item)} />
                                 <img src={item.photo} className={styles.image} />
                                 <li>{item.name}</li>

@@ -23,11 +23,11 @@ export const ProductItem = ({ product }: IProductProps) => {
 
     return (
         <AnimatePresence>
-            <motion.span 
-            initial={{opacity: 0, }}
-            animate={{opacity: 100, }}
-            exit={{opacity: 0, }}
-            key={product.id} className={styles.product}>
+            <motion.span
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 100, }}
+                exit={{ opacity: 0, }}
+                key={product.id} className={styles.product}>
                 <img src={product.photo} className={styles.image} />
                 <div className={styles.description}>
                     <h4>{product.name}</h4>
