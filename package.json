@@ -14,6 +14,8 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.5",
     "@vitejs/plugin-react": "^4.2.1",
+    "antd": "^5.16.4",
+    "framer-motion": "^11.1.7",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
@@ -28,5 +30,9 @@
     "jsdom": "^24.0.0",
     "typescript": "^5",
     "vitest": "^1.5.2"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

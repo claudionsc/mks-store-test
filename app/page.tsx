@@ -8,6 +8,7 @@ import { Cart } from "@/src/components/Cart";
 import { ProductItem } from "@/src/components/Product";
 import { Header } from "@/src/components/Header";
 import { useGetProducts } from "@/src/data/api";
+import { Skeleton } from 'antd';
 
 export default function Home() {
   
@@ -27,7 +28,12 @@ const [isCartVisible, setIsCartVisible] = useState(false)
   return (
     <main className={styles.main}>
       <Header setIsVisible={() => setIsCartVisible(true)} />
+      
       <span className={styles.products}>
+        {
+          !getAllProducts.isSuccess && <Skeleton active />
+        }
+        
         {productsList.map((product) => {
           return (
             <ProductItem product={product} />

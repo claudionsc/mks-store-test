@@ -40,7 +40,17 @@
   --card-border-rgb: 131, 134, 135;
 }
 
+.ant-skeleton-content{
+  display: block !important;
+  list-style-type: none;
+  width: 900px !important;
 
+}
+
+.ant-skeleton-content ul{
+  list-style-type: none;
+  
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

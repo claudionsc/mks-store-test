@@ -30,7 +30,6 @@ type CartContextProviderProps = {
 const CartContext = createContext<ICartContext | null>(null)
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
-  const [api, setApi] = useState()
   const [cartItems, setCartItems] = useState<Array<Product>>([]);
 
   const addCartItem = (product: Product) => {

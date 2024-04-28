@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { CartContextProvider } from "@/src/data/contexts/cartContext";
 import { TanStackProvider } from "@/src/providers/TanStackProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <TanStackProvider>
         <CartContextProvider>
-          <body className={inter.className}>{children}</body>
+          <body className={montserrat.className}>{children}</body>
         </CartContextProvider>
       </TanStackProvider>
     </html>
